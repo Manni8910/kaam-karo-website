@@ -57,7 +57,7 @@ export default function EmployerDashboard() {
 
   async function loadJobs() {
     try {
-      const data = await apiRequest("/api/jobs/employer");
+      const data = await apiRequest("/api/jobs/mine");
       setJobs(data.jobs || []);
     } catch (e) { console.error(e); }
     finally { setLoading(false); }
@@ -68,13 +68,13 @@ export default function EmployerDashboard() {
     if (!title || !location || !salary) { setError("Please fill all required fields"); return; }
     setPosting(true);
     try {
-      // Create Razorpay order
+      // Create Razorpay order — ₹199 = 'week' plan
       const orderData = await apiRequest("/api/payments/create-order", {
         method: "POST",
-        body: JSON.stringify({ jobData: { title, description: desc, locationName: location, salary: Number(salary), jobType } }),
+        body: JSON.stringify({ plan: 'week' }),
       });
 
-      if (orderData.free) {
+      if (orderData.isFree) {
         // Free post — post directly
         await postJobDirectly();
         return;
@@ -142,10 +142,11 @@ export default function EmployerDashboard() {
   }
 
   async function postJobDirectly() {
-    const jobData = pendingJob || { title, description: desc, locationName: location, salary: Number(salary), jobType };
+    const s = Number(pendingJob?.salary || salary);
+    const jobData = pendingJob || { title, description: desc, locationName: location, salaryMin: s, salaryMax: s, jobType };
     await apiRequest("/api/jobs", {
       method: "POST",
-      body: JSON.stringify(jobData),
+      body: JSON.stringify({ ...jobData, salaryMin: s, salaryMax: s }),
     });
     setShowPostJob(false);
     setTitle(""); setDesc(""); setLocation(""); setSalary(""); setJobType("FULL_TIME");
@@ -304,7 +305,7 @@ export default function EmployerDashboard() {
                   <div>
                     <h3 className="font-bold text-lg">{job.title}</h3>
                     <p className="text-gray-500 text-sm mt-1">📍 {job.locationName} · {job.jobType.replace("_", " ")}</p>
-                    <p className="text-[#FF4F5A] font-semibold mt-1">₹{job.salary?.toLocaleString("en-IN")}/month</p>
+                    <p className="text-[#FF4F5A] font-semibold mt-1">₹{(job.salary || (job as any).salaryMin)?.toLocaleString("en-IN")}/month</p>
                   </div>
                   <div className="text-right">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.isActive ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>
