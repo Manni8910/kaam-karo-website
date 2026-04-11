@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-3">1. Introduction</h2>
-            <p>KaamKaro ("we", "our", or "us") is operated by Kaam Karo, a sole proprietorship registered under UDYAM-UK-05-0130547, based in Dehradun, Uttarakhand, India. This Privacy Policy explains how we collect, use, and protect your personal information when you use our mobile application and website (kaamkaro.co.in).</p>
+            <p>KaamKaro ("we", "our", or "us") is owned and operated by <strong>Navjot Singh Lalh</strong>, trading as Kaam Karo, a sole proprietorship registered under UDYAM-UK-05-0130547, based in Dehradun, Uttarakhand, India. This Privacy Policy explains how we collect, use, and protect your personal information when you use our mobile application and website (kaamkaro.co.in).</p>
           </section>
 
           <section>

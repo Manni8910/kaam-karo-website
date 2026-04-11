@@ -17,7 +17,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-3">1. Acceptance of Terms</h2>
-            <p>By accessing or using KaamKaro (the "Service"), you agree to be bound by these Terms of Service. If you do not agree, please do not use the Service. KaamKaro is operated by Kaam Karo (UDYAM-UK-05-0130547), Dehradun, Uttarakhand, India.</p>
+            <p>By accessing or using KaamKaro (the "Service"), you agree to be bound by these Terms of Service. If you do not agree, please do not use the Service. KaamKaro is owned and operated by <strong>Navjot Singh Lalh</strong>, trading as Kaam Karo (UDYAM-UK-05-0130547), Dehradun, Uttarakhand, India.</p>
           </section>
 
           <section>
