@@ -269,6 +269,7 @@ export default function Home() {
           </div>
           <div className="border-t border-gray-800 mt-6 pt-6 text-center text-xs">
             © 2024 KaamKaro (Kaam Karo) · UDYAM-UK-05-0130547 · Dehradun, Uttarakhand, India · Pan India Service
+            <div className="mt-2">📞 +91 95480 27499 · ✉️ support@kaamkaro.co.in</div>
           </div>
         </div>
       </footer>
