@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { apiRequest, getUser, clearAuth } from "@/lib/api";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://kaam-backend-production.up.railway.app';
-const RAZORPAY_KEY = process.env.NEXT_PUBLIC_RAZORPAY_KEY || 'rzp_test_SbNdyLC4Xi5gT6';
 
 type Job = {
   id: string;
@@ -18,7 +17,7 @@ type Job = {
 };
 
 declare global {
-  interface Window { Razorpay: any; }
+  interface Window { Cashfree: any; }
 }
 
 export default function EmployerDashboard() {
@@ -44,14 +43,14 @@ export default function EmployerDashboard() {
   useEffect(() => {
     if (!user) { router.push("/login"); return; }
     loadJobs();
-    loadRazorpayScript();
+    loadCashfreeScript();
   }, []);
 
-  function loadRazorpayScript() {
-    if (document.getElementById("razorpay-script")) return;
+  function loadCashfreeScript() {
+    if (document.getElementById("cashfree-script")) return;
     const script = document.createElement("script");
-    script.id = "razorpay-script";
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.id = "cashfree-script";
+    script.src = "https://sdk.cashfree.com/js/v3/cashfree.js";
     document.body.appendChild(script);
   }
 
@@ -80,65 +79,49 @@ export default function EmployerDashboard() {
         return;
       }
 
-      // Open Razorpay checkout
+      // Open Cashfree checkout
       setPendingJob({ title, description: desc, locationName: location, salary: Number(salary), jobType });
-      openRazorpay(orderData.orderId, orderData.amount);
+      await openCashfree(orderData.orderId, orderData.paymentSessionId, orderData.cashfreeEnv);
     } catch (e: any) {
       setError(e.message);
       setPosting(false);
     }
   }
 
-  function openRazorpay(orderId: string, amount: number) {
-    const options = {
-      key: RAZORPAY_KEY,
-      amount: amount,
-      currency: "INR",
-      name: "KaamKaro",
-      description: "Job Posting Fee",
-      image: "https://kaamkaro.co.in/favicon.ico",
-      order_id: orderId,
-      handler: async function (response: any) {
-        setPaymentStatus("processing");
-        try {
-          // Verify payment
-          await apiRequest("/api/payments/verify", {
-            method: "POST",
-            body: JSON.stringify({
-              razorpay_order_id: response.razorpay_order_id,
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_signature: response.razorpay_signature,
-            }),
-          });
-          // Post the job
-          await postJobDirectly();
-          setPaymentStatus("success");
-        } catch (e: any) {
-          setPaymentStatus("failed");
-          setError("Payment verified but job posting failed. Contact support.");
-          setPosting(false);
-        }
-      },
-      prefill: {
-        name: user?.name || "",
-        email: user?.email || "",
-      },
-      theme: { color: "#FF4F5A" },
-      modal: {
-        ondismiss: () => {
-          setPosting(false);
-          setPaymentStatus("idle");
-        }
-      }
-    };
+  async function openCashfree(orderId: string, paymentSessionId: string, mode: string) {
+    try {
+      const cashfree = window.Cashfree({ mode: mode || "production" });
+      const result = await cashfree.checkout({
+        paymentSessionId,
+        redirectTarget: "_modal",
+      });
 
-    const rzp = new window.Razorpay(options);
-    rzp.on("payment.failed", () => {
+      if (result.error) {
+        setPaymentStatus("failed");
+        setError(result.error.message || "Payment failed. Please try again.");
+        setPosting(false);
+        return;
+      }
+
+      // Payment done — verify with backend
+      setPaymentStatus("processing");
+      try {
+        await apiRequest("/api/payments/verify", {
+          method: "POST",
+          body: JSON.stringify({ orderId }),
+        });
+        await postJobDirectly();
+        setPaymentStatus("success");
+      } catch (e: any) {
+        setPaymentStatus("failed");
+        setError("Payment done but job posting failed. Contact support@kaamkaro.co.in");
+        setPosting(false);
+      }
+    } catch (e: any) {
       setPaymentStatus("failed");
-      setError("Payment failed. Please try again.");
+      setError("Payment window closed or failed. Please try again.");
       setPosting(false);
-    });
-    rzp.open();
+    }
   }
 
   async function postJobDirectly() {
@@ -265,8 +248,7 @@ export default function EmployerDashboard() {
                 <div className="text-2xl font-black text-orange-800">₹199</div>
               </div>
               <div className="flex items-center gap-2 mt-2">
-                <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" className="h-4" onError={(e: any) => e.target.style.display='none'} />
-                <span className="text-xs text-orange-600">Secured by Razorpay · UPI, Cards, Net Banking accepted</span>
+                <span className="text-xs text-orange-600">🔒 Secured by Cashfree · UPI, Cards, Net Banking accepted</span>
               </div>
             </div>
 
