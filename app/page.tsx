@@ -143,7 +143,17 @@ export default function Home() {
               {t.hire}
             </Link>
           </div>
-          <p className="text-gray-500 text-sm mt-6">{t.app}</p>
+          {/* App Coming Soon Banner */}
+          <div className="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-6 py-4">
+            <span className="text-2xl">📱</span>
+            <div className="text-left">
+              <div className="text-white font-bold text-sm">Android App — Coming Soon!</div>
+              <div className="text-gray-400 text-xs mt-0.5">
+                {lang === "en" ? "Available on Google Play Store soon · Notify me" : "जल्द Google Play Store पर उपलब्ध"}
+              </div>
+            </div>
+            <span className="bg-[#FF4F5A] text-white text-xs font-bold px-3 py-1 rounded-full">SOON</span>
+          </div>
         </div>
       </section>
 
