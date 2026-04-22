@@ -40,7 +40,7 @@ export default function ShippingPolicy() {
             <p>If your paid service is not activated within 24 hours of payment, please contact us immediately:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Email: support@kaamkaro.co.in</li>
-              <li>Phone/WhatsApp: +91 95480 27499</li>
+              <li></li>
             </ul>
             <p className="mt-2">We will resolve any activation issues within 24 hours of receiving your complaint.</p>
           </section>
@@ -52,7 +52,7 @@ export default function ShippingPolicy() {
               <p><strong>Kaam Karo</strong> (Owned & Operated by Navjot Singh Lalh)</p>
               <p>Dehradun, Uttarakhand, India - 248001</p>
               <p>Email: support@kaamkaro.co.in</p>
-              <p>Phone/WhatsApp: +91 95480 27499</p>
+              <p></p>
               <p>UDYAM: UDYAM-UK-05-0130547</p>
             </div>
           </section>

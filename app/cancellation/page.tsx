@@ -98,7 +98,7 @@ export default function CancellationPolicy() {
             <div className="bg-gray-50 rounded-xl p-4">
               <p><strong>Kaam Karo</strong> (Owned & Operated by Navjot Singh Lalh)</p>
               <p>Email: support@kaamkaro.co.in</p>
-              <p>Phone/WhatsApp: +91 95480 27499</p>
+              <p></p>
               <p>Dehradun, Uttarakhand, India - 248001</p>
             </div>
           </section>

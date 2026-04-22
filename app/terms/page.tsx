@@ -121,7 +121,7 @@ export default function TermsOfService() {
               <p>UDYAM-UK-05-0130547</p>
               <p>Dehradun, Uttarakhand, India - 248008</p>
               <p>Email: support@kaamkaro.co.in</p>
-              <p>Phone/WhatsApp: +91 95480 27499</p>
+              <p></p>
             </div>
           </section>
         </div>

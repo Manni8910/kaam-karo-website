@@ -30,7 +30,7 @@ export default function Maintenance() {
       }}>
         <div style={{ color: '#888', fontSize: 13, marginBottom: 8 }}>For queries, contact us at</div>
         <div style={{ color: '#FF4F5A', fontWeight: 700 }}>support@kaamkaro.co.in</div>
-        <div style={{ color: '#888', fontSize: 13, marginTop: 4 }}>+91 95480 27499</div>
+        <div style={{ color: '#888', fontSize: 13, marginTop: 4 }}></div>
       </div>
     </div>
   );

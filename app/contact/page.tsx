@@ -22,17 +22,15 @@ export default function ContactUs() {
               <p className="text-sm text-gray-600 mb-3">For general queries, billing, and account issues</p>
               <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A] font-bold">
                 support@kaamkaro.co.in
-              </a>
+
               <p className="text-xs text-gray-400 mt-2">Response within 24 hours</p>
             </div>
 
             <div className="bg-[#FFF5F5] rounded-2xl p-6">
-              <div className="text-3xl mb-3">📞</div>
-              <h2 className="text-lg font-bold text-gray-900 mb-2">Phone / WhatsApp</h2>
+              <div className="text-3xl mb-3">💬</div>
+              <h2 className="text-lg font-bold text-gray-900 mb-2">WhatsApp Support</h2>
               <p className="text-sm text-gray-600 mb-3">For urgent queries and support</p>
-              <a href="tel:+919548027499" className="text-[#FF4F5A] font-bold">
-                +91 95480 27499
-              </a>
+              <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A] font-bold">support@kaamkaro.co.in</a>
               <p className="text-xs text-gray-400 mt-2">Mon–Sat, 10 AM – 6 PM IST</p>
             </div>
           </div>
