@@ -20,9 +20,7 @@ export default function ContactUs() {
               <div className="text-3xl mb-3">✉️</div>
               <h2 className="text-lg font-bold text-gray-900 mb-2">Email Support</h2>
               <p className="text-sm text-gray-600 mb-3">For general queries, billing, and account issues</p>
-              <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A] font-bold">
-                support@kaamkaro.co.in
-
+              <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A] font-bold">support@kaamkaro.co.in</a>
               <p className="text-xs text-gray-400 mt-2">Response within 24 hours</p>
             </div>
 
