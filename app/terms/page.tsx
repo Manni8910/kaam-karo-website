@@ -165,7 +165,7 @@ export default function TermsOfService() {
             <h2 className="text-xl font-bold text-gray-900 mb-3">15. Grievance Officer</h2>
             <p className="mb-3">As required under the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, we have appointed a Grievance Officer. If you have any complaints or concerns regarding our platform or these Terms, you may contact:</p>
             <div className="bg-gray-50 rounded-xl p-4">
-              <p><strong>Grievance Officer: Manni Singh</strong></p>
+              <p><strong>Grievance Officer</strong></p>
               <p><strong>Kaam Technologies LLP</strong></p>
               <p>Punjab, India</p>
               <p>Email: <a href="mailto:support@kaamkaro.co.in" className="text-[#1B3FAB]">support@kaamkaro.co.in</a></p>

@@ -151,7 +151,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-bold text-gray-900 mb-3">13. Grievance Officer</h2>
             <p className="mb-3">As required under Rule 5(9) of the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, we have appointed a Grievance Officer to address any complaints or concerns regarding the collection, storage, or use of your personal data:</p>
             <div className="bg-gray-50 rounded-xl p-4">
-              <p><strong>Grievance Officer: Manni Singh</strong></p>
+              <p><strong>Grievance Officer</strong></p>
               <p><strong>Kaam Technologies LLP</strong></p>
               <p>Punjab, India</p>
               <p>Email: <a href="mailto:support@kaamkaro.co.in" className="text-[#1B3FAB]">support@kaamkaro.co.in</a></p>
