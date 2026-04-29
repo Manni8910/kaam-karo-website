@@ -5,7 +5,7 @@ export default function ShippingPolicy() {
     <div className="min-h-screen bg-white">
       <nav className="border-b border-gray-100 py-4 px-4">
         <div className="max-w-3xl mx-auto">
-          <Link href="/" className="text-xl font-black text-[#FF4F5A]">KaamKaro</Link>
+          <Link href="/" className="text-xl font-black text-[#1B3FAB]">KaamKaro</Link>
         </div>
       </nav>
 

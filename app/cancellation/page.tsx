@@ -5,7 +5,7 @@ export default function CancellationPolicy() {
     <div className="min-h-screen bg-white">
       <nav className="border-b border-gray-100 py-4 px-4">
         <div className="max-w-3xl mx-auto">
-          <Link href="/" className="text-xl font-black text-[#FF4F5A]">KaamKaro</Link>
+          <Link href="/" className="text-xl font-black text-[#1B3FAB]">KaamKaro</Link>
         </div>
       </nav>
 
@@ -65,19 +65,19 @@ export default function CancellationPolicy() {
             <h2 className="text-xl font-bold text-gray-900 mb-3">3. How to Request a Refund</h2>
             <div className="bg-gray-50 rounded-xl p-4 space-y-3">
               <div className="flex gap-3 items-start">
-                <span className="bg-[#FF4F5A] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">1</span>
+                <span className="bg-[#1B3FAB] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">1</span>
                 <p className="text-sm">Email us at <strong>support@kaamkaro.co.in</strong> with subject line: <em>"Refund Request - [Your Job Post Title]"</em></p>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="bg-[#FF4F5A] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">2</span>
+                <span className="bg-[#1B3FAB] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">2</span>
                 <p className="text-sm">Include your registered email, payment transaction ID, and reason for refund</p>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="bg-[#FF4F5A] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">3</span>
+                <span className="bg-[#1B3FAB] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">3</span>
                 <p className="text-sm">We will review your request within <strong>48 hours</strong> and respond via email</p>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="bg-[#FF4F5A] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">4</span>
+                <span className="bg-[#1B3FAB] text-white text-xs font-bold px-2 py-1 rounded-full shrink-0">4</span>
                 <p className="text-sm">Approved refunds are processed within <strong>5–7 business days</strong> to your original payment method</p>
               </div>
             </div>

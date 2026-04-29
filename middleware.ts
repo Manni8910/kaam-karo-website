@@ -18,8 +18,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect everything else to maintenance
-  return NextResponse.redirect(new URL('/maintenance', request.url));
+  // Redirect to maintenance, preserving UTM params so Google Analytics can attribute the visit
+  const maintenanceUrl = new URL('/maintenance', request.url);
+  const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  utmParams.forEach(param => {
+    const val = request.nextUrl.searchParams.get(param);
+    if (val) maintenanceUrl.searchParams.set(param, val);
+  });
+  return NextResponse.redirect(maintenanceUrl);
 }
 
 export const config = {

@@ -5,7 +5,7 @@ export default function ContactUs() {
     <div className="min-h-screen bg-white">
       <nav className="border-b border-gray-100 py-4 px-4">
         <div className="max-w-3xl mx-auto">
-          <Link href="/" className="text-xl font-black text-[#FF4F5A]">KaamKaro</Link>
+          <Link href="/" className="text-xl font-black text-[#1B3FAB]">KaamKaro</Link>
         </div>
       </nav>
 
@@ -20,7 +20,7 @@ export default function ContactUs() {
               <div className="text-3xl mb-3">✉️</div>
               <h2 className="text-lg font-bold text-gray-900 mb-2">Email Support</h2>
               <p className="text-sm text-gray-600 mb-3">For general queries, billing, and account issues</p>
-              <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A] font-bold">support@kaamkaro.co.in</a>
+              <a href="mailto:support@kaamkaro.co.in" className="text-[#1B3FAB] font-bold">support@kaamkaro.co.in</a>
               <p className="text-xs text-gray-400 mt-2">Response within 24 hours</p>
             </div>
 
@@ -28,7 +28,7 @@ export default function ContactUs() {
               <div className="text-3xl mb-3">💬</div>
               <h2 className="text-lg font-bold text-gray-900 mb-2">WhatsApp Support</h2>
               <p className="text-sm text-gray-600 mb-3">For urgent queries and support</p>
-              <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A] font-bold">support@kaamkaro.co.in</a>
+              <a href="mailto:support@kaamkaro.co.in" className="text-[#1B3FAB] font-bold">support@kaamkaro.co.in</a>
               <p className="text-xs text-gray-400 mt-2">Mon–Sat, 10 AM – 6 PM IST</p>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function ContactUs() {
               </div>
               <div className="border border-gray-100 rounded-xl p-4">
                 <h3 className="font-bold mb-1">How do I get a refund?</h3>
-                <p className="text-sm text-gray-600">Email us at support@kaamkaro.co.in within 7 days of payment. See our <Link href="/cancellation" className="text-[#FF4F5A]">Cancellation Policy</Link> for details.</p>
+                <p className="text-sm text-gray-600">Email us at support@kaamkaro.co.in within 7 days of payment. See our <Link href="/cancellation" className="text-[#1B3FAB]">Cancellation Policy</Link> for details.</p>
               </div>
               <div className="border border-gray-100 rounded-xl p-4">
                 <h3 className="font-bold mb-1">Where is KaamKaro available?</h3>

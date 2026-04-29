@@ -72,7 +72,7 @@ export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md">
-        <Link href="/" className="text-2xl font-black text-[#FF4F5A] block mb-8">KaamKaro</Link>
+        <Link href="/" className="text-2xl font-black text-[#1B3FAB] block mb-8">KaamKaro</Link>
 
         {/* Step indicator */}
         <div className="flex items-center gap-2 mb-6">
@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
             <div key={i} className="flex items-center gap-2">
               <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                 (step === "input" && i === 0) || (step === "otp" && i === 1) || (step === "newpass" && i === 2)
-                  ? "bg-[#FF4F5A] text-white"
+                  ? "bg-[#1B3FAB] text-white"
                   : ((step === "otp" && i === 0) || (step === "newpass" && i <= 1))
                   ? "bg-green-500 text-white"
                   : "bg-gray-100 text-gray-400"
@@ -98,11 +98,11 @@ export default function ForgotPasswordPage() {
 
             <div className="flex bg-gray-100 rounded-xl p-1 mb-6">
               <button onClick={() => setMethod("email")}
-                className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "email" ? "bg-white shadow text-[#FF4F5A]" : "text-gray-500"}`}>
+                className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "email" ? "bg-white shadow text-[#1B3FAB]" : "text-gray-500"}`}>
                 ✉️ Email
               </button>
               <button onClick={() => setMethod("phone")}
-                className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "phone" ? "bg-white shadow text-[#FF4F5A]" : "text-gray-500"}`}>
+                className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "phone" ? "bg-white shadow text-[#1B3FAB]" : "text-gray-500"}`}>
                 📱 Mobile
               </button>
             </div>
@@ -111,7 +111,7 @@ export default function ForgotPasswordPage() {
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com" className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF4F5A]" />
+                  placeholder="you@example.com" className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1B3FAB]" />
               </div>
             ) : (
               <div className="mb-6">
@@ -119,14 +119,14 @@ export default function ForgotPasswordPage() {
                 <div className="flex">
                   <span className="flex items-center px-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-xl text-gray-500">+91</span>
                   <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
-                    placeholder="9876543210" className="flex-1 px-4 py-3 border border-gray-300 rounded-r-xl focus:outline-none focus:border-[#FF4F5A]" />
+                    placeholder="9876543210" className="flex-1 px-4 py-3 border border-gray-300 rounded-r-xl focus:outline-none focus:border-[#1B3FAB]" />
                 </div>
               </div>
             )}
 
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <button onClick={sendReset} disabled={loading}
-              className="w-full py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
+              className="w-full py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
               {loading ? "Sending..." : "Send Reset OTP →"}
             </button>
           </>
@@ -137,20 +137,20 @@ export default function ForgotPasswordPage() {
             <h1 className="text-2xl font-bold mb-2">Enter OTP</h1>
             <p className="text-gray-500 mb-6">
               OTP sent to {method === "email" ? email : `+91 ${phone}`}
-              <button onClick={() => setStep("input")} className="text-[#FF4F5A] underline ml-2 text-sm">Change</button>
+              <button onClick={() => setStep("input")} className="text-[#1B3FAB] underline ml-2 text-sm">Change</button>
             </p>
             {devCode && <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm px-3 py-2 rounded-lg mb-4">{devCode}</div>}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">OTP Code</label>
               <input type="tel" value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
-                placeholder="Enter OTP" className="w-full px-4 py-3 border border-gray-300 rounded-xl text-center text-2xl tracking-widest focus:outline-none focus:border-[#FF4F5A]" />
+                placeholder="Enter OTP" className="w-full px-4 py-3 border border-gray-300 rounded-xl text-center text-2xl tracking-widest focus:outline-none focus:border-[#1B3FAB]" />
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <button onClick={verifyOtp} disabled={loading}
-              className="w-full py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
+              className="w-full py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
               Verify OTP →
             </button>
-            <button onClick={sendReset} disabled={loading} className="w-full py-2 text-gray-500 text-sm mt-3 hover:text-[#FF4F5A]">
+            <button onClick={sendReset} disabled={loading} className="w-full py-2 text-gray-500 text-sm mt-3 hover:text-[#1B3FAB]">
               Resend OTP
             </button>
           </>
@@ -164,7 +164,7 @@ export default function ForgotPasswordPage() {
               <label className="block text-sm font-medium text-gray-700 mb-2">New Password</label>
               <div className="relative">
                 <input type={showPass ? "text" : "password"} value={newPassword} onChange={(e) => setNewPassword(e.target.value)}
-                  placeholder="Min 6 characters" className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF4F5A]" />
+                  placeholder="Min 6 characters" className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1B3FAB]" />
                 <button type="button" onClick={() => setShowPass(!showPass)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
                   <EyeIcon show={showPass} />
@@ -175,7 +175,7 @@ export default function ForgotPasswordPage() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
               <div className="relative">
                 <input type={showConfirm ? "text" : "password"} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Repeat password" className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF4F5A]" />
+                  placeholder="Repeat password" className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1B3FAB]" />
                 <button type="button" onClick={() => setShowConfirm(!showConfirm)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
                   <EyeIcon show={showConfirm} />
@@ -185,14 +185,14 @@ export default function ForgotPasswordPage() {
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             {success && <p className="text-green-600 text-sm mb-4 text-center">{success} Redirecting...</p>}
             <button onClick={resetPassword} disabled={loading}
-              className="w-full py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
+              className="w-full py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
               {loading ? "Resetting..." : "Reset Password →"}
             </button>
           </>
         )}
 
         <p className="text-center text-sm text-gray-500 mt-6">
-          Remember your password? <Link href="/login" className="text-[#FF4F5A] font-medium">Login</Link>
+          Remember your password? <Link href="/login" className="text-[#1B3FAB] font-medium">Login</Link>
         </p>
       </div>
     </div>

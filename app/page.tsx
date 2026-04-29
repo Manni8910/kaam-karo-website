@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const content = {
@@ -98,29 +99,31 @@ export default function Home() {
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-black text-[#FF4F5A]">KaamKaro</span>
-            <span className="text-xs bg-[#FF4F5A] text-white px-2 py-0.5 rounded-full">BETA</span>
+            <Image src="/kaam-icon.jpeg" alt="KaamKaro" width={38} height={38} className="rounded-xl" />
+            <Image src="/kaam-logo.jpeg" alt="KaamKaro" width={140} height={40} className="object-contain hidden sm:block" />
+            <span className="text-2xl font-black text-[#1B3FAB] sm:hidden">KaamKaro</span>
+            <span className="text-xs bg-[#38B83A] text-white px-2 py-0.5 rounded-full">BETA</span>
           </div>
           <div className="flex items-center gap-3">
             {/* Language Toggle */}
             <div className="flex bg-gray-100 rounded-lg p-0.5 text-sm">
               <button
                 onClick={() => setLang("en")}
-                className={`px-3 py-1 rounded-md font-medium transition-all ${lang === "en" ? "bg-white shadow text-[#FF4F5A]" : "text-gray-500"}`}
+                className={`px-3 py-1 rounded-md font-medium transition-all ${lang === "en" ? "bg-white shadow text-[#1B3FAB]" : "text-gray-500"}`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLang("hi")}
-                className={`px-3 py-1 rounded-md font-medium transition-all ${lang === "hi" ? "bg-white shadow text-[#FF4F5A]" : "text-gray-500"}`}
+                className={`px-3 py-1 rounded-md font-medium transition-all ${lang === "hi" ? "bg-white shadow text-[#1B3FAB]" : "text-gray-500"}`}
               >
                 हिं
               </button>
             </div>
-            <Link href="/login" className="px-4 py-2 text-gray-700 hover:text-[#FF4F5A] font-medium transition-colors">
+            <Link href="/login" className="px-4 py-2 text-gray-700 hover:text-[#1B3FAB] font-medium transition-colors">
               {t.login}
             </Link>
-            <Link href="/register" className="px-4 py-2 bg-[#FF4F5A] text-white rounded-lg font-medium hover:bg-red-600 transition-colors">
+            <Link href="/register" className="px-4 py-2 bg-[#1B3FAB] text-white rounded-lg font-medium hover:bg-[#38B83A] transition-colors">
               {t.getStarted}
             </Link>
           </div>
@@ -131,12 +134,12 @@ export default function Home() {
       <section className="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-white py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-            {lang === "en" ? <>India Ka <span className="text-[#FF4F5A]">Kaam</span> Platform</> : <span className="text-[#FF4F5A]">{t.tagline}</span>}
+            {lang === "en" ? <>India Ka <span className="text-[#1B3FAB]">Kaam</span> Platform</> : <span className="text-[#1B3FAB]">{t.tagline}</span>}
           </h1>
           <p className="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">{t.subtitle}</p>
           <p className="text-gray-400 mb-10">{t.coverage}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/register?type=seeker" className="px-8 py-4 bg-[#FF4F5A] text-white rounded-xl font-bold text-lg hover:bg-red-600 transition-colors">
+            <Link href="/register?type=seeker" className="px-8 py-4 bg-[#1B3FAB] text-white rounded-xl font-bold text-lg hover:bg-red-600 transition-colors">
               {t.findJob}
             </Link>
             <Link href="/register?type=employer" className="px-8 py-4 bg-white text-[#1a1a2e] rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors">
@@ -152,13 +155,13 @@ export default function Home() {
                 {lang === "en" ? "Available on Google Play Store soon · Notify me" : "जल्द Google Play Store पर उपलब्ध"}
               </div>
             </div>
-            <span className="bg-[#FF4F5A] text-white text-xs font-bold px-3 py-1 rounded-full">SOON</span>
+            <span className="bg-[#1B3FAB] text-white text-xs font-bold px-3 py-1 rounded-full">SOON</span>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-[#FF4F5A] py-12 px-4">
+      <section className="bg-[#1B3FAB] py-12 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center text-white">
           {t.stats.map((stat, i) => (
             <div key={i}>
@@ -178,14 +181,14 @@ export default function Home() {
             {t.steps.seeker.map((item, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm text-center">
                 <div className="text-4xl mb-3">{item.icon}</div>
-                <div className="w-8 h-8 bg-[#FF4F5A] text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-3">{i + 1}</div>
+                <div className="w-8 h-8 bg-[#1B3FAB] text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-3">{i + 1}</div>
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/register?type=seeker" className="px-8 py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 transition-colors">
+            <Link href="/register?type=seeker" className="px-8 py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 transition-colors">
               {t.findJobFree}
             </Link>
           </div>
@@ -221,7 +224,7 @@ export default function Home() {
           <h2 className="text-3xl font-black mb-10">{t.categories}</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {["Driver", "Security Guard", "Cook", "Delivery Boy", "Carpenter", "Electrician", "Plumber", "Sales Executive", "Data Entry", "Receptionist", "Nurse", "Teacher", "Tailor", "Mechanic", "Waiter", "Helper", "Peon", "Sweeper", "Gardener", "Watchman", "AC Technician", "Painter", "Mason", "Welder", "Typist"].map((cat) => (
-              <span key={cat} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium hover:border-[#FF4F5A] hover:text-[#FF4F5A] transition-colors cursor-pointer">
+              <span key={cat} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium hover:border-[#1B3FAB] hover:text-[#1B3FAB] transition-colors cursor-pointer">
                 {cat}
               </span>
             ))}
@@ -252,7 +255,7 @@ export default function Home() {
           <h2 className="text-4xl font-black mb-4">{t.cta}</h2>
           <p className="text-gray-300 mb-8">{t.ctaSub}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/register?type=seeker" className="px-8 py-4 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 transition-colors">
+            <Link href="/register?type=seeker" className="px-8 py-4 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 transition-colors">
               {t.iAmSeeker}
             </Link>
             <Link href="/register?type=employer" className="px-8 py-4 bg-white text-[#1a1a2e] rounded-xl font-bold hover:bg-gray-100 transition-colors">
@@ -266,9 +269,12 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-400 py-10 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-              <div className="text-xl font-black text-white mb-1">KaamKaro</div>
-              <div className="text-sm">India Ka Kaam Platform · भारत का काम प्लेटफ़ॉर्म</div>
+            <div className="flex items-center gap-3">
+              <Image src="/kaam-icon.jpeg" alt="KaamKaro" width={44} height={44} className="rounded-xl" />
+              <div>
+                <div className="text-xl font-black text-white mb-1">KaamKaro</div>
+                <div className="text-sm">India Ka Kaam Platform · भारत का काम प्लेटफ़ॉर्म</div>
+              </div>
             </div>
             <div className="flex gap-6 text-sm">
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

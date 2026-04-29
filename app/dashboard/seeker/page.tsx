@@ -75,7 +75,7 @@ export default function SeekerDashboard() {
       {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-2xl mx-auto px-4 py-4 flex justify-between items-center">
-          <span className="text-xl font-black text-[#FF4F5A]">KaamKaro</span>
+          <span className="text-xl font-black text-[#1B3FAB]">KaamKaro</span>
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600">👋 {user?.name}</span>
             <button onClick={logout} className="text-sm text-gray-500 hover:text-red-500">Logout</button>
@@ -91,7 +91,7 @@ export default function SeekerDashboard() {
             value={search}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="🔍  Search jobs — driver, cook, security..."
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-[#FF4F5A]"
+            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-[#1B3FAB]"
           />
         </div>
 
@@ -105,7 +105,7 @@ export default function SeekerDashboard() {
             <div className="text-5xl mb-4">🎉</div>
             <h3 className="text-xl font-bold mb-2">You've seen all jobs!</h3>
             <p className="text-gray-500 mb-6">Check back later for new opportunities</p>
-            <button onClick={() => loadJobs(search)} className="px-6 py-3 bg-[#FF4F5A] text-white rounded-xl font-bold">
+            <button onClick={() => loadJobs(search)} className="px-6 py-3 bg-[#1B3FAB] text-white rounded-xl font-bold">
               Refresh Jobs
             </button>
           </div>
@@ -128,7 +128,7 @@ export default function SeekerDashboard() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-2xl font-black text-[#FF4F5A] mb-4">
+                <div className="text-2xl font-black text-[#1B3FAB] mb-4">
                   ₹{job.salary?.toLocaleString("en-IN")}<span className="text-base font-normal text-gray-400">/month</span>
                 </div>
                 {job.description && (
@@ -149,7 +149,7 @@ export default function SeekerDashboard() {
               <button
                 onClick={() => swipe("right")}
                 disabled={swiping}
-                className="flex-1 py-4 bg-[#FF4F5A] text-white rounded-2xl font-bold text-lg hover:bg-red-600 transition-all disabled:opacity-50"
+                className="flex-1 py-4 bg-[#1B3FAB] text-white rounded-2xl font-bold text-lg hover:bg-red-600 transition-all disabled:opacity-50"
               >
                 ♥ Apply
               </button>

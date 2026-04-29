@@ -152,7 +152,7 @@ export default function EmployerDashboard() {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
           <div>
-            <span className="text-xl font-black text-[#FF4F5A]">KaamKaro</span>
+            <span className="text-xl font-black text-[#1B3FAB]">KaamKaro</span>
             <span className="text-gray-400 text-sm ml-2">Employer Dashboard</span>
           </div>
           <div className="flex items-center gap-4">
@@ -178,15 +178,15 @@ export default function EmployerDashboard() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-2xl p-6 text-center">
-            <div className="text-3xl font-black text-[#FF4F5A]">{jobs.length}</div>
+            <div className="text-3xl font-black text-[#1B3FAB]">{jobs.length}</div>
             <div className="text-gray-500 text-sm mt-1">Jobs Posted</div>
           </div>
           <div className="bg-white rounded-2xl p-6 text-center">
-            <div className="text-3xl font-black text-[#FF4F5A]">{jobs.filter(j => j.isActive).length}</div>
+            <div className="text-3xl font-black text-[#1B3FAB]">{jobs.filter(j => j.isActive).length}</div>
             <div className="text-gray-500 text-sm mt-1">Active Jobs</div>
           </div>
           <div className="bg-white rounded-2xl p-6 text-center">
-            <div className="text-3xl font-black text-[#FF4F5A]">{jobs.reduce((sum, j) => sum + (j._count?.swipes || 0), 0)}</div>
+            <div className="text-3xl font-black text-[#1B3FAB]">{jobs.reduce((sum, j) => sum + (j._count?.swipes || 0), 0)}</div>
             <div className="text-gray-500 text-sm mt-1">Total Applications</div>
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function EmployerDashboard() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">Your Job Listings</h2>
           <button onClick={() => setShowPostJob(true)}
-            className="px-5 py-2.5 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 transition-colors">
+            className="px-5 py-2.5 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 transition-colors">
             + Post New Job
           </button>
         </div>
@@ -207,22 +207,22 @@ export default function EmployerDashboard() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Job Title *</label>
                 <input value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Delivery Boy"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FF4F5A]" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1B3FAB]" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Location *</label>
                 <input value={location} onChange={e => setLocation(e.target.value)} placeholder="e.g. Mumbai, Maharashtra"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FF4F5A]" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1B3FAB]" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Salary (₹) *</label>
                 <input type="number" value={salary} onChange={e => setSalary(e.target.value)} placeholder="15000"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FF4F5A]" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1B3FAB]" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Job Type</label>
                 <select value={jobType} onChange={e => setJobType(e.target.value)}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FF4F5A]">
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1B3FAB]">
                   <option value="FULL_TIME">Full Time</option>
                   <option value="PART_TIME">Part Time</option>
                   <option value="CONTRACT">Contract</option>
@@ -233,7 +233,7 @@ export default function EmployerDashboard() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Job Description</label>
                 <textarea value={desc} onChange={e => setDesc(e.target.value)} rows={3}
                   placeholder="Describe the job, requirements, benefits..."
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FF4F5A]" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1B3FAB]" />
               </div>
             </div>
             {error && <p className="text-red-500 text-sm mt-3">{error}</p>}
@@ -254,7 +254,7 @@ export default function EmployerDashboard() {
 
             <div className="flex gap-3 mt-4">
               <button onClick={handlePostJob} disabled={posting}
-                className="px-6 py-2.5 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50 flex items-center gap-2">
+                className="px-6 py-2.5 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50 flex items-center gap-2">
                 {posting ? (
                   <><span className="animate-spin">⏳</span> Processing...</>
                 ) : (
@@ -275,7 +275,7 @@ export default function EmployerDashboard() {
             <div className="text-5xl mb-4">📋</div>
             <h3 className="text-lg font-bold mb-2">No jobs posted yet</h3>
             <p className="text-gray-500 mb-6">Post your first job to start finding candidates</p>
-            <button onClick={() => setShowPostJob(true)} className="px-6 py-3 bg-[#FF4F5A] text-white rounded-xl font-bold">
+            <button onClick={() => setShowPostJob(true)} className="px-6 py-3 bg-[#1B3FAB] text-white rounded-xl font-bold">
               Post First Job →
             </button>
           </div>
@@ -287,7 +287,7 @@ export default function EmployerDashboard() {
                   <div>
                     <h3 className="font-bold text-lg">{job.title}</h3>
                     <p className="text-gray-500 text-sm mt-1">📍 {job.locationName} · {job.jobType.replace("_", " ")}</p>
-                    <p className="text-[#FF4F5A] font-semibold mt-1">₹{(job.salary || (job as any).salaryMin)?.toLocaleString("en-IN")}/month</p>
+                    <p className="text-[#1B3FAB] font-semibold mt-1">₹{(job.salary || (job as any).salaryMin)?.toLocaleString("en-IN")}/month</p>
                   </div>
                   <div className="text-right">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.isActive ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>

@@ -5,7 +5,7 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-white">
       <nav className="border-b border-gray-100 py-4 px-4">
         <div className="max-w-3xl mx-auto">
-          <Link href="/" className="text-xl font-black text-[#FF4F5A]">KaamKaro</Link>
+          <Link href="/" className="text-xl font-black text-[#1B3FAB]">KaamKaro</Link>
         </div>
       </nav>
 
@@ -168,7 +168,7 @@ export default function TermsOfService() {
               <p><strong>Grievance Officer: Manni Singh</strong></p>
               <p><strong>Kaam Technologies LLP</strong></p>
               <p>Punjab, India</p>
-              <p>Email: <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A]">support@kaamkaro.co.in</a></p>
+              <p>Email: <a href="mailto:support@kaamkaro.co.in" className="text-[#1B3FAB]">support@kaamkaro.co.in</a></p>
               <p className="mt-2 text-sm text-gray-500">We will acknowledge your complaint within 24 hours and resolve it within 15 days of receipt.</p>
             </div>
           </section>
@@ -178,8 +178,8 @@ export default function TermsOfService() {
             <div className="bg-gray-50 rounded-xl p-4">
               <p><strong>Kaam Technologies LLP</strong></p>
               <p>Punjab, India</p>
-              <p>Email: <a href="mailto:support@kaamkaro.co.in" className="text-[#FF4F5A]">support@kaamkaro.co.in</a></p>
-              <p>Website: <a href="https://kaamkaro.co.in" className="text-[#FF4F5A]">kaamkaro.co.in</a></p>
+              <p>Email: <a href="mailto:support@kaamkaro.co.in" className="text-[#1B3FAB]">support@kaamkaro.co.in</a></p>
+              <p>Website: <a href="https://kaamkaro.co.in" className="text-[#1B3FAB]">kaamkaro.co.in</a></p>
             </div>
           </section>
 
@@ -187,9 +187,9 @@ export default function TermsOfService() {
       </div>
 
       <footer className="border-t border-gray-100 py-6 px-4 text-center text-sm text-gray-400">
-        <Link href="/" className="hover:text-[#FF4F5A]">KaamKaro</Link> ·{" "}
-        <Link href="/privacy" className="hover:text-[#FF4F5A]">Privacy Policy</Link> ·{" "}
-        <Link href="/contact" className="hover:text-[#FF4F5A]">Contact</Link>
+        <Link href="/" className="hover:text-[#1B3FAB]">KaamKaro</Link> ·{" "}
+        <Link href="/privacy" className="hover:text-[#1B3FAB]">Privacy Policy</Link> ·{" "}
+        <Link href="/contact" className="hover:text-[#1B3FAB]">Contact</Link>
       </footer>
     </div>
   );

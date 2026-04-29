@@ -66,18 +66,18 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md">
-        <Link href="/" className="text-2xl font-black text-[#FF4F5A] block mb-8">KaamKaro</Link>
+        <Link href="/" className="text-2xl font-black text-[#1B3FAB] block mb-8">KaamKaro</Link>
         <h1 className="text-2xl font-bold mb-2">Welcome back</h1>
         <p className="text-gray-500 mb-6">Login to your account</p>
 
         {/* Method Toggle */}
         <div className="flex bg-gray-100 rounded-xl p-1 mb-6">
           <button onClick={() => { setMethod("phone"); setStep("input"); setError(""); }}
-            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "phone" ? "bg-white shadow text-[#FF4F5A]" : "text-gray-500"}`}>
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "phone" ? "bg-white shadow text-[#1B3FAB]" : "text-gray-500"}`}>
             📱 Mobile OTP
           </button>
           <button onClick={() => { setMethod("email"); setStep("input"); setError(""); }}
-            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "email" ? "bg-white shadow text-[#FF4F5A]" : "text-gray-500"}`}>
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${method === "email" ? "bg-white shadow text-[#1B3FAB]" : "text-gray-500"}`}>
             ✉️ Email
           </button>
         </div>
@@ -90,27 +90,27 @@ export default function LoginPage() {
                 <div className="flex">
                   <span className="flex items-center px-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg text-gray-500">+91</span>
                   <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
-                    placeholder="9876543210" className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:border-[#FF4F5A]" />
+                    placeholder="9876543210" className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:border-[#1B3FAB]" />
                 </div>
               </div>
               {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
               <button onClick={sendOtp} disabled={loading}
-                className="w-full py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
+                className="w-full py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
                 {loading ? "Sending..." : "Send OTP →"}
               </button>
             </>
           ) : (
             <>
-              <p className="text-sm text-gray-500 mb-4">OTP sent to +91 {phone} <button onClick={() => setStep("input")} className="text-[#FF4F5A] underline">Change</button></p>
+              <p className="text-sm text-gray-500 mb-4">OTP sent to +91 {phone} <button onClick={() => setStep("input")} className="text-[#1B3FAB] underline">Change</button></p>
               {devCode && <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm px-3 py-2 rounded-lg mb-4">{devCode}</div>}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Enter OTP</label>
                 <input type="tel" value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 4))}
-                  placeholder="4-digit OTP" className="w-full px-4 py-3 border border-gray-300 rounded-xl text-center text-2xl tracking-widest focus:outline-none focus:border-[#FF4F5A]" />
+                  placeholder="4-digit OTP" className="w-full px-4 py-3 border border-gray-300 rounded-xl text-center text-2xl tracking-widest focus:outline-none focus:border-[#1B3FAB]" />
               </div>
               {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
               <button onClick={verifyOtp} disabled={loading}
-                className="w-full py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
+                className="w-full py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
                 {loading ? "Verifying..." : "Login →"}
               </button>
             </>
@@ -120,13 +120,13 @@ export default function LoginPage() {
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com" className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF4F5A]" />
+                placeholder="you@example.com" className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1B3FAB]" />
             </div>
             <div className="mb-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
               <div className="relative">
                 <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••" className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF4F5A]" />
+                  placeholder="••••••••" className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1B3FAB]" />
                 <button type="button" onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
                   <EyeIcon show={showPassword} />
@@ -134,20 +134,20 @@ export default function LoginPage() {
               </div>
             </div>
             <div className="flex justify-end mb-6">
-              <Link href="/forgot-password" className="text-sm text-[#FF4F5A] hover:underline">
+              <Link href="/forgot-password" className="text-sm text-[#1B3FAB] hover:underline">
                 Forgot password?
               </Link>
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <button onClick={loginWithEmail} disabled={loading}
-              className="w-full py-3 bg-[#FF4F5A] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
+              className="w-full py-3 bg-[#1B3FAB] text-white rounded-xl font-bold hover:bg-red-600 disabled:opacity-50">
               {loading ? "Logging in..." : "Login →"}
             </button>
           </>
         )}
 
         <p className="text-center text-sm text-gray-500 mt-6">
-          Don't have an account? <Link href="/register" className="text-[#FF4F5A] font-medium">Register</Link>
+          Don't have an account? <Link href="/register" className="text-[#1B3FAB] font-medium">Register</Link>
         </p>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Maintenance() {
       textAlign: 'center',
     }}>
       <div style={{ fontSize: 56, marginBottom: 24 }}>🔧</div>
-      <div style={{ fontSize: 32, fontWeight: 900, color: '#FF4F5A', marginBottom: 8 }}>
+      <div style={{ fontSize: 32, fontWeight: 900, color: '#1B3FAB', marginBottom: 8 }}>
         KaamKaro
       </div>
       <div style={{ fontSize: 20, fontWeight: 700, color: '#ffffff', marginBottom: 12 }}>
@@ -29,7 +29,7 @@ export default function Maintenance() {
         padding: '20px 32px',
       }}>
         <div style={{ color: '#888', fontSize: 13, marginBottom: 8 }}>For queries, contact us at</div>
-        <div style={{ color: '#FF4F5A', fontWeight: 700 }}>support@kaamkaro.co.in</div>
+        <div style={{ color: '#1B3FAB', fontWeight: 700 }}>support@kaamkaro.co.in</div>
         <div style={{ color: '#888', fontSize: 13, marginTop: 4 }}></div>
       </div>
     </div>
